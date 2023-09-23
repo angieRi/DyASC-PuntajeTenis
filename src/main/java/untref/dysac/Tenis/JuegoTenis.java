@@ -22,24 +22,4 @@ public class JuegoTenis{
         return games[numeroJugador];
     }
 
-    void sumarPuntos(Jugador jugador){
-        //Jugador jugador = this.jugadores.;
-
-        switch (jugador.getPuntaje()){
-            case 0:
-                jugador.setPuntaje(15);
-                break;
-            case 15:
-                jugador.setPuntaje(30);
-                break;
-            case 30:
-                jugador.setPuntaje(40);
-                break;
-            case 40:
-                jugador.setPuntaje(0);
-                break;
-        }
-    }
-
-
 }

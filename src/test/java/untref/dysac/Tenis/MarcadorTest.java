@@ -10,8 +10,16 @@ public class MarcadorTest {
     public void iniciaMarcadoryMuestraPuntosDeJugador()
     {
         Jugador jugadorEquipoA = new Jugador();
-        Marcador juegoTenis = new Marcador();
+        Marcador juegoTenis = new Marcador(jugadorEquipoA);
         assertEquals(0,juegoTenis.getMarcador(jugadorEquipoA));
+        assertNotEquals(15,juegoTenis.getMarcador(jugadorEquipoA));
+    }
+    @Test
+    public void marcadorConseguirGame()
+    {
+        Jugador jugadorEquipoA = new Jugador();
+        Marcador juegoTenis = new Marcador(jugadorEquipoA);
+     //   assertEquals(0,juegoTenis.getGames());
         assertNotEquals(15,juegoTenis.getMarcador(jugadorEquipoA));
     }
 }

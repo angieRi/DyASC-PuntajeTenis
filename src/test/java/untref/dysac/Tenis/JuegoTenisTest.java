@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 public class JuegoTenisTest {
-
+/*
     @Test
     public void deberiaSumarPuntosSinReset()
     {
@@ -36,7 +36,7 @@ public class JuegoTenisTest {
         juego.sumarPuntos(jugador0);
 
         assertEquals(jugador0.getPuntaje(),0);
-    }
+    }*/
 /*
     @Test
     public void deberiaGanarGamejugador0()

@@ -9,6 +9,22 @@ import static org.junit.Assert.assertNotEquals;
 public class JugadorTest{
 
     @Test
+    public void jugadorAConseguirGames()
+    {
+        Jugador jugador = new Jugador();
+        jugador.obtenerGamesGanados();
+        assertNotEquals(1,jugador.obtenerGamesGanados());
+        assertEquals(0,jugador.obtenerGamesGanados());
+    }
+
+    @Test
+    public void deberiaAgregarYDevolverUnGameGanado(){
+        Jugador jugador = new Jugador();
+        jugador.sumarGameGanado();
+        assertEquals(1,jugador.obtenerGamesGanados());
+    }
+
+    @Test
     public void deberiaSumarPuntosSinReset()
     {
         Jugador jugador = new Jugador();

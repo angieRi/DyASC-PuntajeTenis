@@ -4,6 +4,7 @@ public class Jugador{
 
     private int puntaje;
     private boolean ventaja;
+    private int gamesGanados= 0; // game
 
     public int getPuntaje() {
         return puntaje;
@@ -36,5 +37,13 @@ public class Jugador{
 
     public void setVentaja(boolean ventaja) {
         this.ventaja = ventaja;
+    }
+
+    public int obtenerGamesGanados() {
+        return gamesGanados;
+    }
+
+    public void sumarGameGanado() {
+        this.gamesGanados++;
     }
 }
