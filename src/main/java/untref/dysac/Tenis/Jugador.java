@@ -9,6 +9,10 @@ public class Jugador{
         return puntaje;
     }
 
+    public void setPuntaje(int puntaje) {
+        this.puntaje = puntaje;
+    }
+
     void sumarPuntos(){
         switch (this.puntaje){
             case 0:
