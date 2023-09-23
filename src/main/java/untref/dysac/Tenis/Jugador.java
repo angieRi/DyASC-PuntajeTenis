@@ -3,6 +3,7 @@ package untref.dysac.Tenis;
 public class Jugador{
 
     private int puntaje;
+    private boolean ventaja;
 
     public int getPuntaje() {
         return puntaje;
@@ -19,6 +20,17 @@ public class Jugador{
             case 30:
                 this.puntaje +=10;
                 break;
+            case 40:
+                this.puntaje = 0;
+                break;
         }
+    }
+
+    public boolean hasVentaja() {
+        return ventaja;
+    }
+
+    public void setVentaja(boolean ventaja) {
+        this.ventaja = ventaja;
     }
 }

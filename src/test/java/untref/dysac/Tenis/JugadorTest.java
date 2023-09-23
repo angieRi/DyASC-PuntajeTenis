@@ -9,7 +9,7 @@ import static org.junit.Assert.assertNotEquals;
 public class JugadorTest{
 
     @Test
-    public void sumarPuntos()
+    public void deberiaSumarPuntosSinReset()
     {
         Jugador jugador = new Jugador();
         jugador.sumarPuntos();
@@ -21,7 +21,7 @@ public class JugadorTest{
     }
 
     @Test
-    public void sumarPuntos()
+    public void deberiaSumarPuntosResetandoLlegarA40()
     {
         Jugador jugador = new Jugador();
         jugador.sumarPuntos();
@@ -30,6 +30,8 @@ public class JugadorTest{
         assertEquals(jugador.getPuntaje(),30);
         jugador.sumarPuntos();
         assertEquals(jugador.getPuntaje(),40);
+        jugador.sumarPuntos();
+        assertEquals(jugador.getPuntaje(),0);
     }
 
 }
