@@ -49,5 +49,28 @@ public class JugadorTest{
         jugador.sumarPuntos();
         assertEquals(jugador.getPuntaje(),0);
     }
-
+    @Test
+    public void obtieneSetDelJugador(){
+        Jugador jugador = new Jugador();
+        jugador.obtenerSets();
+        assertNotEquals(1,jugador.obtenerSets());
+    }
+    @Test
+    public void incrementaSetGanadoDelJugador(){
+        Jugador jugadorA = new Jugador();
+        jugadorA.ganaSet();
+        assertEquals(1,jugadorA.obtenerSets());
+    }
+    @Test
+    public void obtieneTieBrakeDeJugadorA(){
+        Jugador jugadorA = new Jugador();
+        jugadorA.obtenerPuntosTieBrake();
+        assertNotEquals(1,jugadorA.obtenerPuntosTieBrake());
+    }
+    @Test
+    public void sumaUnPuntoTieBrakeDeJugadorA(){
+        Jugador jugadorA = new Jugador();
+        jugadorA.ganaPuntoTieBrake();
+        assertEquals(1,jugadorA.obtenerPuntosTieBrake());
+    }
 }
