@@ -103,5 +103,59 @@ public class JuegoTenisTest {
         juego.cambiarEstadoDeVentaja(jugador0);
         assertEquals("jugador 0",juego.obtenerJugadorConVentaja());
     }
+    @Test
+    public void deberiaJugador0GanarUnGame(){
+        Jugador jugador0 = new Jugador("jugador 0");
+        Jugador jugador1 = new Jugador("jugador 1");
+        JuegoTenis juego = new JuegoTenis(jugador0,jugador1);
 
+        juego.sumarPuntos(jugador0);//15
+        juego.sumarPuntos(jugador0);////30
+        juego.sumarPuntos(jugador0);////40
+
+        juego.sumarPuntos(jugador1);//15
+        juego.sumarPuntos(jugador1);////30
+
+        juego.sumarPuntos(jugador0);
+
+        assertEquals(1,jugador0.obtenerGamesGanados());
+    }
+    @Test
+    public void reiniciPuntosDeJugadoresA0(){
+        Jugador jugador0 = new Jugador("jugador 0");
+        Jugador jugador1 = new Jugador("jugador 1");
+        JuegoTenis juego = new JuegoTenis(jugador0,jugador1);
+
+        juego.sumarPuntos(jugador0);//15
+        juego.sumarPuntos(jugador0);////30
+        juego.sumarPuntos(jugador0);////40
+
+        juego.sumarPuntos(jugador1);//15
+        juego.sumarPuntos(jugador1);////30
+
+        juego.sumarPuntos(jugador0);
+
+        assertEquals(1,jugador0.obtenerGamesGanados());
+        juego.reiniciarPuntosDeJugadores();
+        assertEquals(0,jugador0.getPuntaje());
+        assertEquals(0,jugador1.getPuntaje());
+    }
+    @Test
+    public void jugador0DeberiaGanarUnSet(){
+        Jugador jugador0 = new Jugador("jugador 0");
+        Jugador jugador1 = new Jugador("jugador 1");
+        JuegoTenis juego = new JuegoTenis(jugador0,jugador1);
+
+        for(int i=0; i<6;i++){
+            juego.sumarPuntos(jugador0);//15
+            juego.sumarPuntos(jugador0);//30
+            juego.sumarPuntos(jugador0);//40
+
+            juego.sumarPuntos(jugador1);//15
+            juego.sumarPuntos(jugador1);//30
+
+            juego.sumarPuntos(jugador0);
+        }
+        assertEquals(6,jugador0.obtenerGamesGanados());
+    }
 }

@@ -1,7 +1,5 @@
 package untref.dysac.Tenis;
 
-import untref.dysac.Tenis.interfaces.JuegoTenisInterface;
-
 public class JuegoTenis{
 
     private Jugador[] jugadores;
@@ -38,18 +36,22 @@ public class JuegoTenis{
                 break;
             case 30:
                 jugador.setPuntaje(40);//jugador tiene 40 puntos
-                this.estaEnEstadoDeuce();//entonces, verifica si juego está en estado deuce(ambos jugadores tienen 40 puntos)
                 break;
             case 40:
                 if(this.estaEnEstadoDeuce()){ //si el estado de juego es Deuce, entonces jugador entra en ventaja
                     this.cambiarEstadoDeVentaja(jugador);
                 }else{
                     jugador.sumarGameGanado();//Si un jugador llega a los 40 puntos y vuelve a obtener una pelota exitosa, ganará un game
-                    jugador.setPuntaje(0);//reinicia el juego
+                   this.reiniciarPuntosDeJugadores();//reinicia el juego
                 }
                 break;
         }
     }
+
+    /**
+     * verifica si juego está en estado deuce(ambos jugadores tienen 40 puntos)
+     * @return
+     */
     public boolean estaEnEstadoDeuce(){
         int puntajeJugador1 = this.jugadores[0].getPuntaje();
         int puntajeJugador2 = this.jugadores[1].getPuntaje();
@@ -68,5 +70,24 @@ public class JuegoTenis{
 
     public String obtenerJugadorConVentaja() {
         return this.jugadores[0].hasVentaja()? this.jugadores[0].conseguirNombre(): this.jugadores[1].conseguirNombre();
+    }
+
+    /**
+     * Cada set se gana si un jugador llega a 6 games, siempre y cuando tenga diferencia de 2 games con su contrincante.
+     * @return
+     */
+    public String obtenerJugadorConMasGames()
+    {
+        int gamesJugador1 =this.jugadores[0].obtenerGamesGanados();
+        int gamesJugador2 =this.jugadores[1].obtenerGamesGanados();
+        return gamesJugador1 > gamesJugador2? this.jugadores[0].conseguirNombre():this.jugadores[1].conseguirNombre();
+    }
+
+    /**
+     * reinicia el juego, coloca los puntos de los jugadores a 0
+     */
+    public void reiniciarPuntosDeJugadores() {
+        jugadores[0].setPuntaje(0);
+        jugadores[1].setPuntaje(0);
     }
 }
