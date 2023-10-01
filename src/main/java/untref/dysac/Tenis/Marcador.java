@@ -3,7 +3,7 @@ package untref.dysac.Tenis;
 import java.util.List;
 
 public class Marcador {
-
+    // solo la parte visual
     private List<Jugador> jugadores;
     private int puntosJugadorA;
     private int puntosJugadorB;
@@ -33,11 +33,6 @@ public class Marcador {
                 break;
         }
     }
-    private Jugador jugadorTenis;
-    public Marcador(Jugador jugadorEquipo) {
-        this.jugadorTenis= jugadorEquipo;
-    }
-
     public Object getMarcador(Jugador jugadorEquipoA) {
         return jugadorEquipoA.getPuntaje();
     }
