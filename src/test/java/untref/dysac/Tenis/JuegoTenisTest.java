@@ -7,12 +7,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 public class JuegoTenisTest {
-/*
+
     @Test
     public void deberiaSumarPuntosSinReset()
     {
-        Jugador jugador0 = new Jugador();
-        Jugador jugador1 = new Jugador();
+        Jugador jugador0 = new Jugador("jugador 0");
+        Jugador jugador1 = new Jugador("jugador 1");
         JuegoTenis juego = new JuegoTenis(jugador0,jugador1);
 
         juego.sumarPuntos(jugador0);
@@ -26,8 +26,8 @@ public class JuegoTenisTest {
     @Test
     public void deberiaSumarPuntosResetandoLlegarA40()
     {
-        Jugador jugador0 = new Jugador();
-        Jugador jugador1 = new Jugador();
+        Jugador jugador0 = new Jugador("jugador 0");
+        Jugador jugador1 = new Jugador("jugador 1");
         JuegoTenis juego = new JuegoTenis(jugador0,jugador1);
 
         juego.sumarPuntos(jugador0);
@@ -36,13 +36,13 @@ public class JuegoTenisTest {
         juego.sumarPuntos(jugador0);
 
         assertEquals(jugador0.getPuntaje(),0);
-    }*/
-/*
+    }
+
     @Test
     public void deberiaGanarGamejugador0()
     {
-        Jugador jugador0 = new Jugador();
-        Jugador jugador1 = new Jugador();
+        Jugador jugador0 = new Jugador("jugador 0");
+        Jugador jugador1 = new Jugador("jugador 1");
         JuegoTenis juego = new JuegoTenis(jugador0,jugador1);
 
         int games;
@@ -53,6 +53,5 @@ public class JuegoTenisTest {
 
         //games = JuegoTenis.getGames(0).getGames();
     }
-*/
 
 }
