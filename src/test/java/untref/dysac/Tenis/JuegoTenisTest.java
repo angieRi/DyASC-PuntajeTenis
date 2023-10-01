@@ -1,6 +1,7 @@
 package untref.dysac.Tenis;
 
 import org.junit.Test;
+import org.junit.validator.ValidateWith;
 import untref.dysac.Tenis.interfaces.JuegoTenisInterface;
 
 import static org.junit.Assert.*;
@@ -82,4 +83,25 @@ public class JuegoTenisTest {
 
         assertFalse(juego.estaEnEstadoDeuce());
     }
+
+    @Test
+    public void deberiaJugador0EstarEnVentaja(){
+        Jugador jugador0 = new Jugador("jugador 0");
+        Jugador jugador1 = new Jugador("jugador 1");
+        JuegoTenis juego = new JuegoTenis(jugador0,jugador1);
+
+        juego.sumarPuntos(jugador0);//15
+        juego.sumarPuntos(jugador0);////30
+        juego.sumarPuntos(jugador0);////40
+
+        juego.sumarPuntos(jugador1);//15
+        juego.sumarPuntos(jugador1);////30
+        juego.sumarPuntos(jugador1);////40
+
+        assertTrue(juego.verificarDeuce());
+        juego.sumarPuntos(jugador0);
+        juego.cambiarEstadoDeVentaja(jugador0);
+        assertEquals("jugador 0",juego.obtenerJugadorConVentaja());
+    }
+
 }

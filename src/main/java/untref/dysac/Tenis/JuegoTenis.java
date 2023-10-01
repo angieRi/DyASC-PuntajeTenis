@@ -22,7 +22,10 @@ public class JuegoTenis{
     public int getGames(int numeroJugador){
         return games[numeroJugador];
     }
-
+    // debería chequear si hay ventajas
+    // dependiendo de cual tenga ventaja se le saca al otro O gana el game
+    // si gana un game puede ganar un set-> posibilidad de tie break
+    // si gana 3 sets gana el partido?
     public void sumarPuntos(Jugador jugador){
         //Jugador jugador = this.jugadores.;
 
@@ -34,21 +37,16 @@ public class JuegoTenis{
                 jugador.setPuntaje(30);
                 break;
             case 30:
-                jugador.setPuntaje(40);
+                jugador.setPuntaje(40);//jugador tiene 40 puntos
+                this.verificarDeuce();//entonces, verifica si juego está en estado deuce(ambos jugadores tienen 40 puntos)
                 break;
             case 40:
-                // deuce = 40 y 40
-                if(estaEnEstadoDeuce()){
-                    // verificar ventaja
-                        // agrega ventaja
-                        // quita ventaja
+                if(this.verificarDeuce()){ //si el estado de juego es Deuce, entonces jugador entra en ventaja
+                    this.cambiarEstadoDeVentaja(jugador);
+                }else{
+                    jugador.sumarGameGanado();//Si un jugador llega a los 40 puntos y vuelve a obtener una pelota exitosa, ganará un game
+                    jugador.setPuntaje(0);//reinicia el juego
                 }
-
-                // deberia chequear si hay ventajas
-                // dependiendo de cual tenga ventaja se le saca al otro O gana el game
-                // si gana un game puede ganar un set-> posibilidad de tie break
-                // si gana 3 sets gana el partido?
-                jugador.setPuntaje(0);
                 break;
         }
     }
@@ -64,4 +62,11 @@ public class JuegoTenis{
         return hayEstadoDeuce;
     }
 
+    public void cambiarEstadoDeVentaja(Jugador jugador) {
+        jugador.setVentaja(true);
+    }
+
+    public String obtenerJugadorConVentaja() {
+        return this.jugadores[0].hasVentaja()? this.jugadores[0].conseguirNombre(): this.jugadores[1].conseguirNombre();
+    }
 }
