@@ -69,4 +69,17 @@ public class JuegoTenisTest {
 
         assertTrue(juego.verificarDeuce());
     }
+
+    @Test
+    public void deberiaNoEstarEnEstadoDeuce(){
+        Jugador jugador0 = new Jugador("jugador 0");
+        Jugador jugador1 = new Jugador("jugador 1");
+        JuegoTenis juego = new JuegoTenis(jugador0,jugador1);
+
+        juego.sumarPuntos(jugador0);//15
+        juego.sumarPuntos(jugador0);////30
+        juego.sumarPuntos(jugador0);////40
+
+        assertFalse(juego.verificarDeuce());
+    }
 }
