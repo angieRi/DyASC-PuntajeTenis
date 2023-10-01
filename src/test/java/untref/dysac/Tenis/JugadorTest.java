@@ -73,4 +73,10 @@ public class JugadorTest{
         jugadorA.ganaPuntoTieBrake();
         assertEquals(1,jugadorA.obtenerPuntosTieBrake());
     }
+    @Test
+    public void deberiaDevolverNombreDeJugador(){
+        Jugador jugadorA = new Jugador("jugadorA");
+
+        assertEquals("jugadorA",jugadorA.conseguirNombre());
+    }
 }

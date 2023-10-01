@@ -95,4 +95,8 @@ public class Jugador{
     public void ganaPuntoTieBrake() {
         this.puntosTieBrake++;
     }
+
+    public String conseguirNombre() {
+        return this.nombre;
+    }
 }
