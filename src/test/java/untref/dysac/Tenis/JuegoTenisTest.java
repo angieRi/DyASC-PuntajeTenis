@@ -53,4 +53,20 @@ public class JuegoTenisTest {
         //games = JuegoTenis.getGames(0).getGames();
     }
 
+    @Test
+    public void deberiaEstarEnEstadoDeuce(){
+        Jugador jugador0 = new Jugador("jugador 0");
+        Jugador jugador1 = new Jugador("jugador 1");
+        JuegoTenis juego = new JuegoTenis(jugador0,jugador1);
+
+        juego.sumarPuntos(jugador0);//15
+        juego.sumarPuntos(jugador0);////30
+        juego.sumarPuntos(jugador0);////40
+
+        juego.sumarPuntos(jugador1);//15
+        juego.sumarPuntos(jugador1);////30
+        juego.sumarPuntos(jugador1);////40
+
+        assertTrue(juego.verificarDeuce());
+    }
 }
