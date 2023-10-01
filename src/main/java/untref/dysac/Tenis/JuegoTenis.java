@@ -37,8 +37,11 @@ public class JuegoTenis{
                 jugador.setPuntaje(40);
                 break;
             case 40:
+                // deuce = 40 y 40
                 if(estaEnEstadoDeuce()){
-
+                    // verificar ventaja
+                        // agrega ventaja
+                        // quita ventaja
                 }
 
                 // deberia chequear si hay ventajas
