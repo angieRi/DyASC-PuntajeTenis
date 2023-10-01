@@ -67,7 +67,7 @@ public class JuegoTenisTest {
         juego.sumarPuntos(jugador1);////30
         juego.sumarPuntos(jugador1);////40
 
-        assertTrue(juego.verificarDeuce());
+        assertTrue(juego.estaEnEstadoDeuce());
     }
 
     @Test
@@ -80,6 +80,6 @@ public class JuegoTenisTest {
         juego.sumarPuntos(jugador0);////30
         juego.sumarPuntos(jugador0);////40
 
-        assertFalse(juego.verificarDeuce());
+        assertFalse(juego.estaEnEstadoDeuce());
     }
 }

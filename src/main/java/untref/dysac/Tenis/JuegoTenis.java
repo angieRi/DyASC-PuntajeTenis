@@ -37,9 +37,10 @@ public class JuegoTenis{
                 jugador.setPuntaje(40);
                 break;
             case 40:
-                if(jugador.hasVentaja()){
+                if(estaEnEstadoDeuce()){
 
                 }
+
                 // deberia chequear si hay ventajas
                 // dependiendo de cual tenga ventaja se le saca al otro O gana el game
                 // si gana un game puede ganar un set-> posibilidad de tie break
@@ -48,7 +49,7 @@ public class JuegoTenis{
                 break;
         }
     }
-    public boolean verificarDeuce(){
+    public boolean estaEnEstadoDeuce(){
         int puntajeJugador1 = this.jugadores[0].getPuntaje();
         int puntajeJugador2 = this.jugadores[1].getPuntaje();
         if(( puntajeJugador1 == puntajeJugador2) &&
