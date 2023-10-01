@@ -98,7 +98,7 @@ public class JuegoTenisTest {
         juego.sumarPuntos(jugador1);////30
         juego.sumarPuntos(jugador1);////40
 
-        assertTrue(juego.verificarDeuce());
+        assertTrue(juego.estaEnEstadoDeuce());
         juego.sumarPuntos(jugador0);
         juego.cambiarEstadoDeVentaja(jugador0);
         assertEquals("jugador 0",juego.obtenerJugadorConVentaja());

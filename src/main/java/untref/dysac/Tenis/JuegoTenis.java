@@ -38,10 +38,10 @@ public class JuegoTenis{
                 break;
             case 30:
                 jugador.setPuntaje(40);//jugador tiene 40 puntos
-                this.verificarDeuce();//entonces, verifica si juego está en estado deuce(ambos jugadores tienen 40 puntos)
+                this.estaEnEstadoDeuce();//entonces, verifica si juego está en estado deuce(ambos jugadores tienen 40 puntos)
                 break;
             case 40:
-                if(this.verificarDeuce()){ //si el estado de juego es Deuce, entonces jugador entra en ventaja
+                if(this.estaEnEstadoDeuce()){ //si el estado de juego es Deuce, entonces jugador entra en ventaja
                     this.cambiarEstadoDeVentaja(jugador);
                 }else{
                     jugador.sumarGameGanado();//Si un jugador llega a los 40 puntos y vuelve a obtener una pelota exitosa, ganará un game
