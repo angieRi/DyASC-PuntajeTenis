@@ -2,12 +2,16 @@ package untref.dysac.Tenis;
 
 public class Jugador{
 
+
+    private final String nombre;
     private int puntaje;
     private boolean ventaja;
     private int gamesGanados= 0; // game
     private int setsJugador;
     private int puntosTieBrake;
-
+    public Jugador(String nombre){
+        this.nombre = nombre;
+    }
     public int getPuntaje() {
         return puntaje;
     }
