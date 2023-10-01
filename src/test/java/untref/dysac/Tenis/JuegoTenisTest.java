@@ -3,8 +3,7 @@ package untref.dysac.Tenis;
 import org.junit.Test;
 import untref.dysac.Tenis.interfaces.JuegoTenisInterface;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
 
 public class JuegoTenisTest {
 
